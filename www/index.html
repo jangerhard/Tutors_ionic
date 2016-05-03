@@ -8,6 +8,7 @@
 
   <!-- compiled css output -->
   <link href="css/ionic.app.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
 
   <!-- ionic/angularjs js -->
   <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -33,21 +34,20 @@
   <ion-content padding="true">
     <h3><center>Available right now</center></h3>
     <div class="list card">
-      <ion-item ng-repeat="tutor in tutors">
+      <ion-item class="tutor-card test" ng-repeat="tutor in tutors">
         <b>{{tutor.name}}</b>
         </br>
         <i>{{tutor.email}}</i>
         </br>
-            <button  ng-click="doSomething(tutor.email)" class="button button-icon icon ion-email">
-            Send mail
-          </button>
-
+        <button ng-click="doSomething(tutor.email)" class="button button-icon icon ion-email">
+          Send mail
+        </button>
       </ion-item>
     </div>
 
     <h3><center>Items</center></h3>
     <ion-list>
-      <ion-item class="item" ng-repeat="item in items" ng-class="{purchased: item.status == 'purchased'}">
+      <ion-item class="item test" ng-repeat="item in items" ng-class="{purchased: item.status == 'purchased'}">
         {{item.name}}
         <ion-option-button class="button-assertive" ng-click="delete(item)">
           <i class="icon ion-close-circled"></i>
